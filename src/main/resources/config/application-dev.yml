@@ -29,7 +29,7 @@ spring:
         mongodb:
             host: ds143262.mlab.com
             port: 43262
-            uri: mongodb://ds143262.mlab.com:43262/otsc
+            uri: mongodb://ds143262.mlab.com:43262
             database: otsc
             username: amdin
             password: admin123
