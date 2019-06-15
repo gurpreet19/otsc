@@ -27,6 +27,8 @@ spring:
         serialization.indent_output: true
     data:
         mongodb:
+            host: ds143262.mlab.com
+            port: 43262
             uri: mongodb://ds143262.mlab.com:43262/otsc
             database: otsc
             username: amdin
