@@ -27,7 +27,7 @@ spring:
         serialization.indent_output: true
     data:
         mongodb:
-            uri: mongodb://ds143262.mlab.com:43262
+            uri: mongodb://ds143262.mlab.com:43262/otsc
             database: otsc
             username: amdin
             password: admin123
