@@ -1,0 +1,74 @@
+{
+  "id": "30",
+  "name": "pcef",
+  "elementConfigSpec": [
+    {
+      "id": "31",
+      "name": "fb",
+      "description": "",
+      "elementConfigSpecCharacteristic": [
+        {
+          "name": "meteringType",
+          "valueType": "string",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "unlimited",
+              "valueType": "string",
+              "unitOfMeasure": ""
+            }
+          ]
+        },
+        {
+          "name": "ipaddress",
+          "valueType": "array",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": [
+                "120.28.60.104/22",
+                "120.28.60.105/23",
+                "120.28.60.106/24",
+                "120.28.60.107/25"
+              ],
+              "valueType": "array",
+              "unitOfMeasure": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "name": "viber",
+      "description": "",
+      "elementConfigSpecCharacteristic": [
+        {
+          "name": "meteringType",
+          "valueType": "string",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "bounded",
+              "valueType": "string",
+              "unitOfMeasure": ""
+            }
+          ]
+        },
+        {
+          "name": "ipaddress",
+          "valueType": "array",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": [
+                "122.28.60.41/22",
+                "122.28.60.42/23",
+                "122.28.60.43/24",
+                "122.28.60.44/25"
+              ],
+              "valueType": "array",
+              "unitOfMeasure": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

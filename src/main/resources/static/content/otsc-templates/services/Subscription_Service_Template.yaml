@@ -1,0 +1,74 @@
+template_name: Subscription Service
+template_type: Subscription
+template_description: |
+    Template for Subscription Service (Mobile Data)
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: service_name
+        param_desc: Service Name
+        param_type: string
+      -
+        param_name: description
+        param_desc: Service Description
+        param_type: string
+      -
+        param_name: lifecycleStatus
+        param_enum:
+          - Draft
+          - Active
+          - Retired
+          - Out of Service
+        param_desc: Status
+        param_type: string
+      -
+        param_name: externalId
+        param_desc: External Service ID
+        param_type: string
+service_parameters:
+  -
+    name: "Service Parameters"
+    params:
+      -
+        param_desc: "Latency"
+        param_name: Latency
+        param_type: string
+        value_required: false
+      -
+        param_desc: "Download Speed"
+        param_name: DownloadSpeed
+        param_type: string
+        value_required: false
+      -
+        param_desc: "Upload Speed"
+        param_name: UploadSpeed
+        param_type: string
+        value_required: false
+      -
+        param_desc: "User Endpoint Type"
+        param_enum_multi:
+          - VehicleNode
+          - IOTNode
+          - StreamingNode
+          - VehicleControlRoom
+          - IoTAnalyticServer
+          - VideoServer
+        param_name: UEType
+        param_type: string
+      -
+        param_desc: "MSISDN"
+        param_name: MSISDN
+        param_type: string
+        value_required: false
+      -
+        param_desc: "IMSI"
+        param_name: IMSI
+        param_enum:
+        param_type: string
+        value_required: false        
+      -
+        param_desc: "Network Slice Instance Id"
+        param_name: NetworkSliceInstanceId        
+        param_type: string
+        value_required: false

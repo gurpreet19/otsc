@@ -1,0 +1,41 @@
+---
+product_parameters:
+  -
+    name: "Product Parameters"
+    params:
+      -
+        param_desc: "Number of CPUs"
+        param_name: num_cpus
+        param_type: number
+      -
+        param_desc: "Memory (in GB)"
+        param_name: memory
+        param_type: number
+      -
+        param_desc: "Storage capacity (in GB)"
+        param_name: storage
+        param_type: number
+service_types: "template_refs:· Cloud_Service_Template"
+template_description: |
+    Product Template for Enterprise Private Cloud Hosting
+    Create Product with following parameters
+    ✓ Compute
+    ✓ Storage
+    ✓ Memory
+template_name: "Enterprise Cloud Hosting"
+template_parameters:
+  -
+    name: General
+    params:
+      -
+        param_desc: "Product Name"
+        param_name: product_name
+        param_type: string
+      -
+        param_desc: "Product Type (Private or Public)"
+        param_enum:
+          - Private
+          - Public
+        param_name: product_type
+        param_type: string
+template_type: Private_Cloud_Hosting

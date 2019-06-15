@@ -1,0 +1,105 @@
+template_name: Enterprise Public Cloud Hosting
+template_type: Public_Cloud_Hosting
+template_description: |
+    Offer Template for Enterprise Public Cloud Hosting
+    Create Offer with following parameters 
+    ✓ Plan (S, M, L, XL etc.)
+config_needed:
+  - Product_Catalog
+  - Service_Catalog
+  - Resource_Catalog
+  - VCD
+eligible_base_offer_types:
+  - &P1 Cloud_Product
+eligible_addon_offer_types:
+  - &P2 Virtual_Load_Balancer
+  - &P3 Virtual_Firewall
+  - &P4 Antivirus
+product_types:
+  - base_product_types: [*P1]
+  - addon_product_types: [*P2,*P3,*P4]
+step1_parameters:
+  - name: General
+    params:
+      -
+        param_name: offer_name
+        param_desc: Offer Name
+        param_type: string
+      -
+        param_name: offer_type
+        param_desc: Offer Type (Single Base Plan with add-ons or Multiple Base Plans with add-ons)
+        param_type: string
+        param_enum: [single, multiple]
+      -
+        param_name: max_addons
+        param_desc:
+        param_type: number
+        param_minimum: 1
+step2_parameters:
+  -
+    name: basic_pricing_parameters
+    description: Basic Pricing Parameters
+    params:
+      -
+        param_name: plan_name
+        param_desc: Plan Name
+        param_type: string
+      -
+        param_name: recurring_period
+        param_desc: Recurring Period
+        param_hint: one of hour, day, week or month
+        param_type: string
+        param_enum: [hour,day,week,month]
+      -
+        param_name: price
+        param_desc: Price (in Pesos)
+        param_type: number
+      -
+        param_name: pricing_text
+        param_desc: Pricing Text
+        param_hint: details of pricing which customers would see on the marketplace
+        param_type: string
+      -
+        param_name: bundled_products
+        param_desc: Bundled Products
+        param_type: array
+        param_enum_multi: [*P1,*P2,*P3,*P4]
+        param_onChange: bundleSelected(modelValue, form)
+step3_parameters:
+  -
+    name: Addon Pricing Parameters
+    params:
+      -
+        param_name: addon_product_types
+        param_desc: Addon Products
+        param_type: array
+        param_enum_multi: [*P2,*P3,*P4]
+        refresh: true
+      -
+        param_name: recurring_period
+        param_desc: one of hour, day, week or month
+        param_type: string
+        param_enum: [hour,day,week,month]
+      -
+        param_name: price
+        param_desc: Price (in Pesos)
+        param_type: number
+      -
+        param_name: pricing_text
+        param_desc: details of pricing which customers would see on the marketplace
+        param_type: string
+offer_parameters:
+  - name: *P1
+    params:
+      -
+        param_name: num_cpus
+        param_desc: Number of CPUs
+        param_type: number
+      -
+        param_name: memory
+        param_desc: Memory (in GB)
+        param_type: number
+      -
+        param_name: storage
+        param_desc: Storage capacity (in GB)
+        param_type: number

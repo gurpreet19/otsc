@@ -1,0 +1,54 @@
+{
+  "id": "10",
+  "name": "pcrf",
+  "elementConfigSpec": [
+    {
+      "id": "11",
+      "name": "Plan 1899",
+      "description": "",
+      "elementConfigSpecCharacteristic": [
+        {
+          "name": "limit",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "300000",
+              "valueType": "number",
+              "unitOfMeasure": "Gb"
+            }
+          ]
+        },
+        {
+          "name": "normalQos",
+          "valueType": "object",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": {
+                "class": "8",
+                "maxRequestedBandwidthUl": "50000",
+                "maxRequestedBandwidthDl": "50000"
+              },
+              "valueType": "object",
+              "unitOfMeasure": ""
+            }
+          ]
+        },
+        {
+          "name": "throttledQos",
+          "valueType": "object",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": {
+                "class": "8",
+                "maxRequestedBandwidthUl": "7000",
+                "maxRequestedBandwidthDl": "7000"
+              },
+              "valueType": "object",
+              "unitOfMeasure": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

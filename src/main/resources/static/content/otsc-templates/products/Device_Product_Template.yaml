@@ -1,0 +1,49 @@
+template_name: Device Product
+template_type: Subscription
+template_description: |
+    Template for Device Product
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: name
+        param_desc: Product Specification Name
+        param_type: string
+      -
+        param_name: description
+        param_desc: Product Specification Description
+        param_type: string
+      -
+        param_name: lifecycleStatus
+        param_enum:
+          - Draft
+          - Active
+          - Retired
+          - Out of Service
+        param_desc: Status
+        param_type: string
+product_parameters:
+  -
+    name: "Product Specification Parameters"
+    params:
+      -
+        param_desc: "Acquisition"
+        param_enum_multi:
+          - Leased
+          - Purchased
+          - BYOD
+        param_name: Acquisition
+        param_type: string
+      -
+        param_desc: "Device Type"
+        param_enum_multi:
+          - IoTDevice
+          - StreamingDevice
+          - VehicleContoller        
+        param_name: DeviceType
+        param_type: string
+      -
+        param_desc: "IMEI"
+        param_name: IMEI
+        param_type: string
+        value_required: false

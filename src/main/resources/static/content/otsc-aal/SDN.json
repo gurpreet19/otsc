@@ -1,0 +1,42 @@
+{
+  "id": "40",
+  "name": "sdn",
+  "elementConfigSpec": [
+    {
+      "id": "41",
+      "name": "bronze",
+      "description": "",
+      "elementConfigSpecCharacteristic": [
+        {
+          "name": "maxBandWidth",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "1",
+              "valueType": "number",
+              "unitOfMeasure": "gbps"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "name": "silver",
+      "description": "",
+      "elementConfigSpecCharacteristic": [
+        {
+          "name": "maxBandWidth",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "5",
+              "valueType": "number",
+              "unitOfMeasure": "gbps"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

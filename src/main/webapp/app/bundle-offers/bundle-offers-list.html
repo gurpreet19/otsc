@@ -1,0 +1,43 @@
+<div>
+    <h2>Browse Bundle Offers</h2>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isSellable"><span>Is Sellable</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lifecycleStatus"><span>Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="validFor_startDateTime"><span>Selling Start Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="validFor_endDateTime"><span>Selling End Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="created_by"><span data-translate="otscApp.bundleOffer.created_by">Created By</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="created_date"><span data-translate="otscApp.bundleOffer.created_date">Created Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span>Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="template"><span>Template</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="bundleOffer in vm.bundleOffers track by bundleOffer.id">
+                    <td>{{bundleOffer.id}}</a></td>
+                    <td>{{bundleOffer.name}}</td>
+                    <td>{{bundleOffer.description}}</td>
+                    <td>{{bundleOffer.isSellable}}</td>
+                    <td>{{bundleOffer.lifecycleStatus}}</td>
+                    <td>{{bundleOffer.validFor_startDateTime}}</td>
+                    <td>{{bundleOffer.validFor_endDateTime}}</td>
+                    <td>{{bundleOffer.created_by}}</td>
+					<td>{{bundleOffer.created_date | date:'mediumDate'}}</td>
+                    <td>{{bundleOffer.type}}</td>
+                    <td>{{bundleOffer.template}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

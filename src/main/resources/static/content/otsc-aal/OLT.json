@@ -1,0 +1,24 @@
+{
+  "id": "20",
+  "name": "olt",
+  "elementConfigSpec": [
+    {
+      "id": "21",
+      "name": "plan1899",
+      "description": "",
+      "elementConfigSpecCharacteristic": [
+        {
+          "name": "maximumBandwidth",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "50000",
+              "valueType": "number",
+              "unitOfMeasure": "mpbs"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

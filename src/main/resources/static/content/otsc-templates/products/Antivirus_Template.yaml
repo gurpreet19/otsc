@@ -1,0 +1,13 @@
+template_name: Antivirus
+template_description: |
+    Product Template for Antivirus
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: product_name
+        param_desc: Product Name
+        param_type: string
+service_types:
+    template_refs:
+      Antivirus_Service_Template

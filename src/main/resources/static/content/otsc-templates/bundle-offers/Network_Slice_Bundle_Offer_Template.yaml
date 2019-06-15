@@ -1,0 +1,43 @@
+template_name: Network Slice Bundle Offer
+template_type: Network_Slice
+template_description: |
+    Template for Network Slice Bundle Offer
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: bundle_offer_name
+        param_desc: Bundle Offer Name
+        param_type: string
+      -
+        param_name: description
+        param_desc: Bundle Offer Description
+        param_type: string
+      -
+        param_name: isSellable
+        param_enum:
+          - "true"
+          - "false"
+        param_desc: Is Sellable
+        param_type: string
+      -
+        param_name: lifecycleStatus
+        param_enum:
+          - Draft
+          - Active
+          - Retired
+          - Out of Service
+        param_desc: Status
+        param_type: string
+      -
+        param_name: validFor_startDateTime
+        param_desc: Selling Start Date
+        param_type: string
+        param_format: date
+        date_format: yyyy-mm-dd
+      -
+        param_name: validFor_endDateTime
+        param_desc: Selling End Date
+        param_type: string
+        param_format: date
+        date_format: yyyy-mm-dd

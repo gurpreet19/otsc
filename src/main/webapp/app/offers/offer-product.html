@@ -1,0 +1,57 @@
+<div>
+  <h2>Offer {{offermodel.offer_name}} saved successfully</h2>
+  <h2>Attach Product to Offer</h2>
+<div class="table-responsive">
+  <table class="jh-table table table-striped">
+    <thead>
+      <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+        <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+        <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+        <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+        <th jh-sort-by="lifecycleStatus"><span>Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+        <th jh-sort-by="created_by"><span data-translate="otscApp.product.created_by">Created By</span> <span class="glyphicon glyphicon-sort"></span></th>
+        <th jh-sort-by="created_date"><span data-translate="otscApp.product.created_date">Created Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+        <th jh-sort-by="type"><span>Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+        <th jh-sort-by="template"><span>Template</span> <span class="glyphicon glyphicon-sort"></span></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="product in products track by product.id">
+        <!--<td><a ui-sref="product-detail({id:product.id})">{{product.id}}</a></td>-->
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.lifecycleStatus}}</td>
+        <td>{{product.created_by}}</td>
+        <td>{{product.created_date | date:'mediumDate'}}</td>
+        <td>{{product.type}}</td>
+        <td>{{product.template}}</td>
+        <td class="text-right">
+          <div class="btn-group flex-btn-group-container">
+            <!-- <button type="submit" -->
+            <!--     ui&#45;sref="product&#45;detail({id:product.id})" -->
+            <!--     class="btn btn&#45;info btn&#45;sm"> -->
+            <!--   <span class="glyphicon glyphicon&#45;eye&#45;open"></span> -->
+            <!--   <span class="hidden&#45;sm&#45;down"></span> -->
+            <!-- </button> -->
+            <button type="submit"
+                ui-sref="link-offer-product.link({oid: offer.id,
+                pid:product.id, savedoffer:offer})"
+                class="btn btn-primary btn-sm">
+              <span class="glyphicon glyphicon-pencil"></span>
+              <span class="hidden-sm-down"></span>
+            </button>
+            <!-- <button type="submit" -->
+            <!--     ui&#45;sref="product.delete({id:product.id})" -->
+            <!--     class="btn btn&#45;danger btn&#45;sm"> -->
+            <!--   <span class="glyphicon glyphicon&#45;remove&#45;circle"></span> -->
+            <!--   <span class="hidden&#45;sm&#45;down"></span> -->
+            <!-- </button> -->
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

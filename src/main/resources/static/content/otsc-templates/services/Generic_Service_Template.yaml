@@ -1,0 +1,91 @@
+template_name: GST Network Slice Service
+template_type: GST_Network_Slice
+template_description: |
+    Generic Service Temaplte
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: service_name
+        param_desc: Service Name
+        param_type: string
+      -
+        param_name: description
+        param_desc: Service Description
+        param_type: string
+      -
+        param_name: lifecycleStatus
+        param_enum:
+          - Draft
+          - Active
+          - Retired
+          - Out of Service
+        param_desc: Status
+        param_type: string
+      -
+        param_name: externalId
+        param_desc: External Service ID
+        param_type: string
+service_parameters:
+  -
+    name: "Service Parameters"
+    params:
+      -
+        param_desc: "Latency"
+        param_enum_multi:
+          - 50ms
+          - 100ms
+          - 200ms
+        param_name: Latency
+        param_type: string
+      -
+        param_desc: "Download Speed"
+        param_enum_multi:
+          - 100mbps
+          - 500mbps
+          - 1000mbps
+          - 2000mbps
+        param_name: DownloadSpeed
+        param_type: string
+      -
+        param_desc: "Upload Speed"
+        param_enum_multi:
+          - 100mbps
+          - 500mbps
+        param_name: UploadSpeed
+        param_type: string
+      -
+        param_desc: "Mobility"
+        param_enum:
+          - High
+          - Medium
+          - Low
+        param_name: Mobility
+        param_type: string
+      -
+        param_desc: "Reliability"
+        param_enum:
+          - High
+          - Medium
+          - Low
+        param_name: Reliability
+        param_type: string
+      -
+        param_desc: "Power Constrained"
+        param_enum:
+          - Yes
+          - No
+        param_name: PowerConstrained
+        param_type: string
+      -
+        param_desc: "Isolation Needed"
+        param_enum:
+          - Yes
+          - No
+        param_name: IsolationNeeded
+        param_type: string        
+      -
+        param_desc: "Network Slice Instance Id"
+        param_name: NetworkSliceInstanceId 
+        param_type: string
+        value_required: false

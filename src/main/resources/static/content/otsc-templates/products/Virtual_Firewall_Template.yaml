@@ -1,0 +1,13 @@
+template_name: Virtual Firewall
+template_description: |
+    Product Template for Virtual Firewall
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: product_name
+        param_desc: Product Name
+        param_type: string
+service_types:
+    template_refs:
+      Virtual_Firewall_Service_Template

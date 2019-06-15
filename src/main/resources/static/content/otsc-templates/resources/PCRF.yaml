@@ -1,0 +1,82 @@
+template_name: PCRF_resource_profile
+template_description: Policy Charging and Control (PCC) profile (dynamic profile)
+network_elements: [PCRF, OLT]
+template_parameters:
+  -
+    name: param_throttle_limit
+    desc: Throttle Limit
+    params:
+      -
+        param_name: Plan_Name
+        param_desc: Plan Name
+        param_type: string
+        PCRF:
+          interface_param: name
+          interface_param_type: string
+      -
+        param_name: Throttle_Limit
+        param_desc: Usage after which speed is to be throttled (in Gb)
+        param_type: number
+        PCRF:
+          interface_param: limit
+          interface_param_type: number
+  -
+    name: param_QoS_provide
+    desc: Provide QoS Resource Parameters
+    PCRF:
+      interface_param: normalQos
+      interface_param_type: object
+    params:
+      -
+        param_name: PCC_Profile_Name
+        param_desc: PCC Profile Name
+        param_type: string
+      -
+        param_name: QCI_class
+        param_desc: QoS Class Identifier
+        param_type: number
+        PCRF:
+          interface_param: normalQos.class
+      -
+        param_name: Max_Upload_BW
+        param_desc: Maximum Upload Bandwidth (in Mbps)
+        param_type: number
+        PCRF:
+          interface_param: normalQos.maxRequestedBandwidthUl
+        OLT:
+          interface_param: maximumBandwidth
+      -
+        param_name: Max_Download_BW
+        param_desc: Maximum Download Bandwidth (in Mbps)
+        param_type: number
+        PCRF:
+          interface_param: normalQos.maxRequestedBandwidthDl
+  -
+    name: param_QoS_throttle
+    desc: Throttle QoS Resource Parameters
+    PCRF:
+      interface_param: throttledQos
+      interface_param_type: object
+    params:
+      -
+        param_name: PCC_Profile_Name
+        param_desc: PCC Profile Name
+        param_type: string
+      -
+        param_name: QCI_class
+        param_desc: QoS Class Identifier
+        param_type: number
+        PCRF:
+          interface_param: throttledQos.class
+      -
+        param_name: Max_Upload_BW
+        param_desc: Maximum Upload Bandwidth (in Mbps)
+        param_type: number
+        PCRF:
+          interface_param: throttledQos.maxRequestedBandwidthUl
+      -
+        param_name: Max_Download_BW
+        param_desc: Maximum Download Bandwidth (in Mbps)
+        param_type: number
+        PCRF:
+          interface_param: throttledQos.maxRequestedBandwidthDl

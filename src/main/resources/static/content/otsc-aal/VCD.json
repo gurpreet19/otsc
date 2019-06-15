@@ -1,0 +1,86 @@
+{
+  "id": "50",
+  "name": "vcd",
+  "elementConfigSpec": [
+    {
+      "id": "51",
+      "name": "Large",
+      "description": "",
+      "elementConfigSpecCharacteristic": [
+        {
+          "name": "noOfCPus",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "32",
+              "valueType": "number",
+              "unitOfMeasure": ""
+            }
+          ]
+        },
+        {
+          "name": "memory",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "128",
+              "valueType": "number",
+              "unitOfMeasure": "Gb"
+            }
+          ]
+        },
+        {
+          "name": "storage",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "50",
+              "valueType": "number",
+              "unitOfMeasure": "Tb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "52",
+      "name": "Medium",
+      "description": "",
+      "elementConfigSpecCharacteristic": [
+        {
+          "name": "noOfCPus",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "16",
+              "valueType": "number",
+              "unitOfMeasure": ""
+            }
+          ]
+        },
+        {
+          "name": "memory",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "64",
+              "valueType": "number",
+              "unitOfMeasure": "Gb"
+            }
+          ]
+        },
+        {
+          "name": "storage",
+          "valueType": "number",
+          "elementConfigSpecCharacteristicValue": [
+            {
+              "value": "25",
+              "valueType": "number",
+              "unitOfMeasure": "Tb"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+template_name: Enterprise Connectivity
+template_type: Enterprise_Connectivity
+template_description: |
+    Offer Template for Enterprise Connectivity
+    Create Offer with following parameters
+    ✓ Domestic Link, International Link
+config_needed:
+  - Product_Catalog
+  - Service_Catalog
+  - Resource_Catalog
+  - SDN_Controller
+eligible_base_offer_types:
+  - &P1 SD-WAN_Product
+eligible_addon_offer_types:
+  - &P2 VPN_Product
+  - &P3 Virtual_Firewall
+  - &P4 Virtual_CPE
+product_types:
+  - base_product_types: [*P1]
+  - addon_product_types: [*P2,*P3,*P4]
+step1_parameters:
+  - name: General
+    params:
+      -
+        param_name: offer_name
+        param_desc: Offer Name
+        param_type: string
+      -
+        param_name: offer_type
+        param_desc: Offer Type (Single Base Plan with add-ons or Multiple Base Plans with add-ons)
+        param_type: string
+        param_enum: [single, multiple]
+      -
+        param_name: max_addons
+        param_desc:
+        param_type: number
+step2_parameters:
+  -
+    name: basic_pricing_parameters
+    description: Basic Pricing Parameters
+    params:
+      -
+        param_name: plan_name
+        param_desc: Plan Name
+        param_type: string
+      -
+        param_name: bundled_products
+        param_desc: Bundled Products
+        param_type: array
+        param_enum_multi: [*P1,*P2,*P3,*P4]
+        param_onChange: bundleSelected(modelValue, form)
+      -
+        param_name: recurring_period
+        param_desc: one of hour, day, week or month
+        param_type: string
+        param_enum: [hour,day,week,month]
+      -
+        param_name: price
+        param_desc: Price (in Pesos)
+        param_type: number
+      -
+        param_name: pricing_text
+        param_desc: details of pricing which customers would see on the marketplace
+        param_type: string
+step3_parameters:
+  -
+    name: Addon Pricing Parameters
+    params:
+      -
+        param_name: addon_product_types
+        param_desc: Addon Products
+        param_type: array
+        param_enum_multi: [*P2,*P3,*P4]
+        refresh: true
+      -
+        param_name: recurring_period
+        param_desc: one of hour, day, week or month
+        param_type: string
+        param_enum: [hour,day,week,month]
+      -
+        param_name: price
+        param_desc: Price (in Pesos)
+        param_type: number
+      -
+        param_name: pricing_text
+        param_desc: details of pricing which customers would see on the marketplace
+        param_type: string
+offer_parameters:
+  -
+    name: Offer Parameters
+    params:
+      -
+        param_name: maximum_bandwidth
+        param_desc: Maximum Bandwidth (in Gbps)
+        param_type: number

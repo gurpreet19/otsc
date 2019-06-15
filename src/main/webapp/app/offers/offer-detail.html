@@ -1,0 +1,43 @@
+
+<div ng-cloak>
+    <h2><span>Offer Details:</span> {{selectedOffer.name}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{selectedOffer.name}}</span>
+        </dd>
+        <dt><span data-translate="otscApp.offer.created_by">Created By</span></dt>
+        <dd>
+            <span>{{selectedOffer.created_by}}</span>
+        </dd>
+        <dt><span data-translate="otscApp.offer.created_date">Created Date</span></dt>
+        <dd>
+            <span>{{selectedOffer.created_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Type</span></dt>
+        <dd>
+            <span>{{selectedOffer.type}}</span>
+        </dd>
+        <dt><span>Template</span></dt>
+        <dd>
+            <span>{{selectedOffer.template}}</span>
+        </dd>
+    </dl>
+
+    <form sf-schema="offerdetailschema" sf-form="offerdetailform" name="OfferDetailForm"
+        sf-model="offerdetailmodel" class="row" ng-submit="onSubmit(OfferDetailForm)">
+    </form>
+
+    <button type="submit"
+            ui-sref="{{previousState}}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="offer-detail.edit({id:offer.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

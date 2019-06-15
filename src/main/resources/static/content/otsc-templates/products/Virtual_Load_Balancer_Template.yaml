@@ -1,0 +1,16 @@
+template_name: Virtual Load Balancer
+template_description: |
+    Product Template for Virtual Load Balancer
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: product_name
+        param_desc: Product Name
+        param_type: string
+  -
+    name: Product Parameters
+    params:
+service_types:
+    template_refs:
+      Virtual_Load_Balancer_Service_Template

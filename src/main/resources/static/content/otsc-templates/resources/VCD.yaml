@@ -1,0 +1,19 @@
+template_name: VCD vApp Template configuration template
+template_description: Resource Template for configuring the vCD vApp Template
+template_parameters:
+  -
+    name: param_vApp_template
+    desc: vApp Template creation parameters
+    params:
+      -
+        param_name: compute_capacity
+        param_desc: Number of CPU cores
+        param_type: number
+      -
+        param_name: memory
+        param_desc: Memory capacity (in GB)
+        param_type: number
+      -
+        param_name: storage_capacity
+        param_desc: Storage capacity (in TB)
+        param_type: number

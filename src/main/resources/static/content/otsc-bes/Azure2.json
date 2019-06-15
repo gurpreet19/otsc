@@ -1,0 +1,85 @@
+{
+  "products": {
+      "beId": "101",
+      "beCode": "101",
+      "product": {
+        "id": "1000000183",
+        "code": "9000000058",
+        "type": "1",
+        "businessModeType": "B2C",
+        "name": "AWS Cloud Hosting",
+        "shortName": "AWS Cloud Hosting",
+        "status": "D",
+        "description": "Globe One Touch Service Creation Product Use Cases",
+        "isPrimay": "Y",
+        "isComposit": "0",
+        "groupFlag": "0",
+        "classficationId": "910060",
+        "productLine": "0",
+        "groupFlag":0
+      },
+      "productIdentities":[{"typeId":"5000",
+      "isMain":"N",
+      "operateType":"ADD"}],
+      "productSelectRule":{},
+      "productRelations":[],
+      "productSKUs":[],
+      "productMeasurements":[],
+      "providerParty":{},
+      "ownerParty":{},
+      "attributeGroups": [
+        {
+          "id": "910106",
+          "name": "Product Amount",
+          "type": "S",
+          "attributeGroupMembers": [
+            {
+              "memberId": "601030200089",
+              "memberOrder": "1",
+              "memberType": "A",
+              "attribute": {
+                "id": "601030200089",
+                "type": "S",
+                "isComplex": "N",
+                "isNullable": "Y",
+                "isReassignable": "Y",
+                "isInstantiable": "Y",
+                "defaultValue": "{\"VALUE\":\"\"}",
+                "allowChange": "Y",
+                "isInherited": "Y"
+              }
+            }
+          ]
+        },
+        {
+          "id": "910107",
+          "name": "Attribute",
+          "type": "R",
+          "attributeGroupMembers": [
+            {
+              "memberId": "910106",
+              "memberOrder": "1",
+              "memberType": "G"
+            }
+          ]
+        }
+      ],
+      "productOperations": [
+        {
+          "operationType": "C",
+          "relaId": "100000000000000043",
+          "status": "A"
+        },
+        {
+          "operationType": "S",
+          "relaId": "100000000000000044",
+          "status": "A"
+        },
+        {
+          "operationType": "R",
+          "relaId": "100000000000000045",
+          "status": "A"
+        }
+      ]
+    }
+}

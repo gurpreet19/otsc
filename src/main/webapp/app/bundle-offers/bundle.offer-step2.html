@@ -1,0 +1,69 @@
+<div>
+	<h2>{{template_message}}</h2>
+	<h2> Base Offer </h2>
+	<div class="table-responsive">
+	  <table class="jh-table table table-striped">
+	    <thead>
+	      <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+	          <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="isSellable"><span>Is Sellable</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="lifecycleStatus"><span>Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="validFor_startDateTime"><span>Selling Start Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="validFor_endDateTime"><span>Selling End Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="category"><span>Category</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="created_by"><span data-translate="otscApp.offer.created_by">Created By</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="created_date"><span data-translate="otscApp.offer.created_date">Created Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="type"><span>Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+	          <th jh-sort-by="template"><span>Template</span> <span class="glyphicon glyphicon-sort"></span></th>
+	        <th></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr ng-repeat="offer in offers track by offer.id">
+	        <!--<td><a ui-sref="offer-detail({id:offer.id})">{{offer.id}}</a></td>-->
+	        <td>{{offer.id}}</td>
+            <td>{{offer.name}}</td>
+            <td>{{offer.description}}</td>
+            <td>{{offer.isSellable}}</td>
+            <td>{{offer.lifecycleStatus}}</td>
+            <td>{{offer.validFor_startDateTime}}</td>
+            <td>{{offer.validFor_endDateTime}}</td>
+            <td>{{offer.category}}</td>
+            <td>{{offer.created_by}}</td>
+			<td>{{offer.created_date | date:'mediumDate'}}</td>
+            <td>{{offer.type}}</td>
+            <td>{{offer.template}}</td>
+	        <td><input type="checkbox" ng-model="offer.SELECTED"  ng-true-value="'Y'" ng-false-value="'N'"/></td>
+	        
+	<!--         <td class="text-right">
+	          <div class="btn-group flex-btn-group-container">
+	            <button type="submit"
+	                ui&#45;sref="offer&#45;detail({id:offer.id})"
+	                class="btn btn&#45;info btn&#45;sm">
+	              <span class="glyphicon glyphicon&#45;eye&#45;open"></span>
+	              <span class="hidden&#45;sm&#45;down"></span>
+	            </button>
+	            <button type="submit"
+	                ui-sref="link-offer-product.link({oid: offer.id,
+	                pid:product.id, savedoffer:offer})"
+	                class="btn btn-primary btn-sm">
+	              <span class="glyphicon glyphicon-pencil"></span>
+	              <span class="hidden-sm-down"></span>
+	            </button>
+	            <button type="submit"
+	                ui&#45;sref="product.delete({id:product.id})"
+	                class="btn btn&#45;danger btn&#45;sm">
+	              <span class="glyphicon glyphicon&#45;remove&#45;circle"></span>
+	              <span class="hidden&#45;sm&#45;down"></span>
+	            </button>
+	          </div>
+	        </td> -->
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	
+	<input type="submit" name="Next" value="Next" ng-click="check(offers, bundleoffermodel)"/>
+</div>

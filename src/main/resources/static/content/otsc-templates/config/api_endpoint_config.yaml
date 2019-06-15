@@ -1,0 +1,42 @@
+offers:
+  BES:
+    api_endpoint: http://117.78.47.214:17700/openAPI/httpServices/product-mgmt/v1/offerings
+    authentication:
+      username: bes1
+      password: Abc1234%1Hblsqt!
+products:
+  BES:
+    api_endpoint: http://117.78.47.214:17700/openAPI/httpServices/product-mgmt/v1/products
+    authentication:
+      username: bes1
+      password: Abc1234%1Hblsqt!
+resources:
+  PCRF:
+    api_endpoint: http://222.127.30.152:8080/otsc/provision-netw-elements
+    authentication: none
+    element_id: 10
+    element_name: pcrf
+  OLT:
+    api_endpoint: http://222.127.30.152:8080/otsc/provision-netw-elements
+    authentication: none
+    element_id: 20
+    element_name: olt
+  PCEF:
+    api_endpoint: http://222.127.30.152:8080/otsc/provision-netw-elements
+    authentication: none
+    element_id: 30
+    element_name: pcef
+  SDN:
+    api_endpoint: http://222.127.30.152:8080/otsc/provision-netw-elements
+    authentication: none
+    element_id: 40
+    element_name: sdn
+  VCD:
+    api_endpoint: http://222.127.30.152:8080/otsc/provision-netw-elements
+    authentication: none
+    element_id: 50
+    element_name: vcd
+  LSO:
+    api_endpoint: http://222.127.30.152:8080/catalogManagement/serviceSpecification
+    authentication: none
+    element_name: lso

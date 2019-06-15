@@ -1,0 +1,34 @@
+<div>
+    <h2>Publish Bundle Offer</h2>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="created_date"><span data-translate="otscApp.bundleOffer.created_date">Created Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span>Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="bundleOffer in bundleOffers track by bundleOffer.id">
+                    <td>{{bundleOffer.id}}</a></td>
+                    <td>{{bundleOffer.name}}</td>
+					<td>{{bundleOffer.created_date | date:'mediumDate'}}</td>
+                    <td>{{bundleOffer.type}}</td>
+                    <td><input type="checkbox" ng-model="bundleOffer.SELECTED"  ng-true-value="'Y'" ng-false-value="'N'"/></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" name="Next" value="Next" ng-click="check(bundleOffers)"/>
+<!--     <h4>Select Bundle Offer to publish</h4>
+	<select ng-model="selectedBundleOfferModel">
+		<option ng-repeat="bundleOffer in bundleOffers" value="{{bundleOffer}}">{{bundleOffer.name}}</option>
+	</select>	
+    <br/>    
+    <br/>
+	<input type="submit" name="Next" value="Next" ng-click="publish(selectedBundleOfferModel)"/> -->
+</div>

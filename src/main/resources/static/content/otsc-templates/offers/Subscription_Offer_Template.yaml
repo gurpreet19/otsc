@@ -1,0 +1,123 @@
+template_name: Subscription Offer
+template_type: Subscription
+template_description: |
+    Template for Subscription Product Offer (Mobile Data)
+eligible_base_offer_types:
+  - &P1 Subscription_Product
+product_types:
+  - base_product_types: [*P1]
+step1_parameters:
+  - name: General
+    params:
+      -
+        param_name: offer_name
+        param_desc: Product Offer Name
+        param_type: string
+      -
+        param_name: description
+        param_desc: Product Offer Description
+        param_type: string
+      -
+        param_name: isSellable
+        param_enum:
+          - "true"
+          - "false"
+        param_desc: Is Sellable
+        param_type: string         
+      -
+        param_name: lifecycleStatus
+        param_enum:
+          - Draft
+          - Active
+          - Retired
+          - Out of Service
+        param_desc: Status
+        param_type: string
+      -
+        param_name: validFor_startDateTime
+        param_desc: Selling Start Date
+        param_type: string
+        param_format: date
+        date_format: yyyy-mm-dd
+      -
+        param_name: validFor_endDateTime
+        param_desc: Selling End Date
+        param_type: string
+        param_format: date
+        date_format: yyyy-mm-dd 
+      -
+        param_name: category
+        param_enum:
+          - Subscription       
+        param_desc: Category
+        param_type: string
+step2_parameters:
+  -
+    name: basic_pricing_parameters
+    description: Basic Pricing Parameters
+    params:
+      -
+        param_name: name
+        param_desc: Charge Name
+        param_type: string
+      -
+        param_name: priceType
+        param_desc: Type of Charge
+        param_type: string
+        param_enum: [Usage]        
+      -
+        param_name: price_amount
+        param_desc: Price (in USD)
+        param_type: number
+      -
+        param_name: unitOfMeasure_amount
+        param_desc: Usage Unit
+        param_type: string
+        param_enum: [KB,MB,GB]
+      -
+        param_name: bundled_products
+        param_desc: Bundled Products
+        param_type: array
+        param_enum_multi: [*P1]
+        param_onChange: bundleSelected(modelValue, form)
+offer_parameters:
+  -
+    name: *P1
+    params:
+      -
+        param_desc: "Latency"
+        param_name: Latency
+        param_type: string
+        value_required: false
+      -
+        param_desc: "Download Speed"
+        param_name: DownloadSpeed
+        param_type: string
+        value_required: false
+      -
+        param_desc: "Upload Speed"
+        param_name: UploadSpeed
+        param_type: string
+        value_required: false
+      -
+        param_desc: "User Endpoint Type"
+        param_enum_multi:
+          - VehicleNode
+          - IOTNode
+          - StreamingNode
+          - VehicleControlRoom
+          - IoTAnalyticServer
+          - VideoServer
+        param_name: UEType
+        param_type: string
+      -
+        param_desc: "MSISDN"
+        param_name: MSISDN
+        param_type: string
+        value_required: false
+      -
+        param_desc: "IMSI"
+        param_name: IMSI
+        param_enum:
+        param_type: string
+        value_required: false

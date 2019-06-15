@@ -1,0 +1,6 @@
+use otsc
+db.product.insert({"id":"1","name":"Product 1","created_by":"admin","type":"Public_Cloud_Hosting","template":"Enterprise_Public_Cloud_Hosting_Template","created_date":ISODate("2017-03-27T05:10:00+530")})
+db.product.insert({"id":"2","name":"Product 2","created_by":"admin","type":"Public_Cloud_Hosting","template":"Enterprise_Public_Cloud_Hosting_Template","created_date":ISODate("2017-03-27T05:10:00+530")})
+db.product.insert({"id":"3","name":"Product 3","created_by":"admin","type":"Public_Cloud_Hosting","template":"Enterprise_Public_Cloud_Hosting_Template","created_date":ISODate("2017-03-27T05:10:00+530")})
+db.product.insert({"id":"4","name":"Product 4","created_by":"admin","type":"Public_Cloud_Hosting","template":"Enterprise_Public_Cloud_Hosting_Template","created_date":ISODate("2017-03-27T05:10:00+530")})
+db.product.insert({"id":"5","name":"Product 5","created_by":"admin","type":"Public_Cloud_Hosting","template":"Enterprise_Public_Cloud_Hosting_Template","created_date":ISODate("2017-03-27T05:10:00+530")})

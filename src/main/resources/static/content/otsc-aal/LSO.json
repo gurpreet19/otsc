@@ -1,0 +1,102 @@
+{
+  "version": "3.0",
+  "name": "Virtual Storage Medium",
+  "type": "CustomerFacingService",
+  "description": "Virtual storage via the cloud.",
+  "validFor": {
+    "startDateTime": "2013-04-19T16:42:23-04:00",
+    "endDateTime": "2013-06-19T00:00:00-04:00"
+  },
+  "attachment": [],
+  "relatedParty": [
+    {
+      "role": "Owner",
+      "id": "1234",
+      "href": "http ://serverLocation:port/partyManagement/partyRole/1234"
+    }
+  ],
+  "serviceSpecRelationship": [
+    {
+      "type": "dependency",
+      "id": "23",
+      "href": " http://serverlocation:port/catalogManagement/serviceSpecification/23",
+      "validFor": {
+        "startDateTime": "2013-04-19T16:42:23-04:00",
+        "endDateTime": ""
+      }
+    }
+  ],
+  "requiredServiceSpecification": [
+    {
+      "id": "13",
+      "href": "http://serverlocation:port/catalogManagement/serviceSpecification/13",
+      "name": "specification 1",
+      "validFor": {
+        "startDateTime": "2013-04-19T16:42:23-04:00",
+        "endDateTime": ""
+      }
+    }
+  ],
+  "requiredResourceSpecification": [
+    {
+      "id": "13",
+      "href": "http://serverlocation:port/catalogManagement/resourceSpecification/13",
+      "name": "specification 1",
+      "validFor": {
+        "startDateTime": "2013-04-19T16:42:23-04:00",
+        "endDateTime": ""
+      }
+    }
+  ],
+  "serviceSpecCharacteristic": [
+    {
+      "name": " Size",
+      "description": " size",
+      "valueType": "number",
+      "configurable": true,
+      "validFor": {
+        "startDateTime": "2013-04-19T16:42:23-04:00",
+        "endDateTime": ""
+      },
+      "serviceSpecCharRelationship": [],
+      "serviceSpecCharacteristicValue": [
+        {
+          "valueType": "number",
+          "default": true,
+          "value": "500",
+          "unitOfMeasure": "MB",
+          "valueFrom": "",
+          "valueTo": "",
+          "validFor": {
+            "startDateTime": "2013-04-19T16:42:23-04:00",
+            "endDateTime": ""
+          }
+        },
+        {
+          "valueType": "number",
+          "default": false,
+          "value": "10",
+          "unitOfMeasure": "GB",
+          "valueFrom": "",
+          "valueTo": "",
+          "validFor": {
+            "startDateTime": "2013-04-19T16:42:23-04:00",
+            "endDateTime": ""
+          }
+        },
+        {
+          "valueType": "number",
+          "default": false,
+          "value": "50",
+          "unitOfMeasure": "GB",
+          "valueFrom": "",
+          "valueTo": "",
+          "validFor": {
+            "startDateTime": "2013-04-19T16:42:23-04:00",
+            "endDateTime": ""
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+template_name: Cloud Service
+template_type: Private_Cloud_Hosting
+template_description: |
+    Service Template for Enterprise Private Cloud Hosting
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: service_name
+        param_desc: Service Name
+        param_type: string
+      -
+        param_name: compute_capacity
+        param_desc: Number of CPU cores
+        param_type: number
+      -
+        param_name: memory
+        param_desc: Memory capacity (in GB)
+        param_type: number
+      -
+        param_name: storage_capacity
+        param_desc: Storage capacity (in TB)
+        param_type: number
+service_parameters:
+  -
+    name: "Service Parameters"
+    params:
+      -
+        param_desc: "Number of CPUs"
+        param_name: num_cpus
+        param_type: number
+      -
+        param_desc: "Memory (in GB)"
+        param_name: memory
+        param_type: number
+      -
+        param_desc: "Storage capacity (in GB)"
+        param_name: storage
+        param_type: number
+service_types:
+  template_refs:
+    Cloud_Resource_Template

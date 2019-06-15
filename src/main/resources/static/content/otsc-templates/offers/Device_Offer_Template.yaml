@@ -1,0 +1,107 @@
+template_name: Device Offer
+template_type: Subscription
+template_description: |
+    Template for Device Product Offer
+eligible_base_offer_types:
+  - &P1 Device_Product
+product_types:
+  - base_product_types: [*P1]
+step1_parameters:
+  - name: General
+    params:
+      -
+        param_name: offer_name
+        param_desc: Product Offer Name
+        param_type: string
+      -
+        param_name: description
+        param_desc: Product Offer Description
+        param_type: string
+      -
+        param_name: isSellable
+        param_enum:
+          - "true"
+          - "false"
+        param_desc: Is Sellable
+        param_type: string         
+      -
+        param_name: lifecycleStatus
+        param_enum:
+          - Draft
+          - Active
+          - Retired
+          - Out of Service
+        param_desc: Status
+        param_type: string
+      -
+        param_name: validFor_startDateTime
+        param_desc: Selling Start Date
+        param_type: string
+        param_format: date
+        date_format: yyyy-mm-dd
+      -
+        param_name: validFor_endDateTime
+        param_desc: Selling End Date
+        param_type: string
+        param_format: date
+        date_format: yyyy-mm-dd
+      -
+        param_name: category
+        param_enum:
+          - Device       
+        param_desc: Category
+        param_type: string
+step2_parameters:
+  -
+    name: basic_pricing_parameters
+    description: Basic Pricing Parameters
+    params:
+      -
+        param_name: name
+        param_desc: Charge Name
+        param_type: string
+      -
+        param_name: priceType
+        param_desc: Type of Charge
+        param_type: string
+        param_enum: [RC,NRC]        
+      -
+        param_name: recurringChargePeriodType
+        param_desc: Recurring Period
+        param_type: string
+        param_enum: [Hour,Day,Week,Month,NA]
+      -
+        param_name: price_amount
+        param_desc: Price (in USD)
+        param_type: number
+      -
+        param_name: bundled_products
+        param_desc: Bundled Products
+        param_type: array
+        param_enum_multi: [*P1]
+        param_onChange: bundleSelected(modelValue, form)
+offer_parameters:
+  -
+    name: *P1
+    params:
+      -
+        param_desc: "Acquisition"
+        param_enum:
+          - Leased
+          - Purchased
+          - BYOD
+        param_name: Acquisition
+        param_type: string
+      -
+        param_desc: "Device Type"
+        param_enum:
+          - IoTDevice
+          - StreamingDevice
+          - VehicleContoller        
+        param_name: DeviceType
+        param_type: string
+      -
+        param_desc: "IMEI"
+        param_name: IMEI
+        param_type: string
+        value_required: false

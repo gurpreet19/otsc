@@ -1,0 +1,42 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-4">
+            <!--<span class="hipster img-responsive img-rounded"></span>-->
+        </div>
+        <div class="col-md-8">
+            <h1>Welcome to the One Touch Service Creation application</h1>
+            <p class="lead">TMForum Catalyst entry</p>
+            <p class="lead">Sponsor: Globe Telecom, Philippines</p>
+            <p class="lead">Participants: Infosys, Huawei, VMWare, TBD</p>
+
+            <div ng-switch="vm.isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true">
+                    You are logged in as user "{{vm.account.login}}".
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
+                </div>
+            </div>
+
+            <p>
+              For more information, please reach out to:
+            </p>
+
+            <ul>
+              <li><a href="http://infosys.com/" target="_blank">Infosys</a></li>
+              <li><a href="http://huawei.com" target="_blank">Huawei</a></li>
+              <li><a href="https://vmware.com" target="_blank">VMWare</a></li>
+              <li><a href="https://tmforum.org" target="_blank">TMForum</a></li>
+            </ul>
+
+            <p>
+             <!--<span>If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank">Github</a>!-->
+            </p>
+        </div>
+    </div>
+</div>

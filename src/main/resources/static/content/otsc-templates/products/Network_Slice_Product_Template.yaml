@@ -1,0 +1,54 @@
+template_name: Network Slice Product
+template_type: Network_Slice
+template_description: |
+    Template for Network Slice Product (eMBB, uRLLC, mIoT)
+template_parameters:
+  - name: General
+    params:
+      -
+        param_name: name
+        param_desc: Product Specification Name
+        param_type: string
+      -
+        param_name: description
+        param_desc: Product Specification Description
+        param_type: string
+      -
+        param_name: lifecycleStatus
+        param_enum:
+          - Draft
+          - Active
+          - Retired
+          - Out of Service
+        param_desc: Status
+        param_type: string
+product_parameters:
+  -
+    name: "Product Specification Parameters"
+    params:
+      -
+        param_desc: "Latency"
+        param_enum_multi:
+          - 50ms
+          - 100ms
+          - 200ms
+        param_name: Latency
+        param_type: string
+        value_required: false
+      -
+        param_desc: "Download Speed"
+        param_enum_multi:
+          - 100mbps
+          - 500mbps
+          - 1000mbps
+          - 2000mbps
+        param_name: DownloadSpeed
+        param_type: string
+      -
+        param_desc: "Upload Speed"
+        param_enum_multi:
+          - 100mbps
+          - 500mbps
+        param_name: UploadSpeed
+        param_type: string
+service_types: "template_refs:· Network_Slice_Service_Template"

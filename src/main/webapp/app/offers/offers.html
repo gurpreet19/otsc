@@ -1,0 +1,67 @@
+<div>
+    <h2>Browse Offers</h2>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isSellable"><span>Is Sellable</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lifecycleStatus"><span>Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="validFor_startDateTime"><span>Selling Start Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="validFor_endDateTime"><span>Selling End Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="category"><span>Category</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="created_by"><span data-translate="otscApp.offer.created_by">Created By</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="created_date"><span data-translate="otscApp.offer.created_date">Created Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span>Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="template"><span>Template</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="offer in vm.offers track by offer.id">
+                    <td><a ui-sref="list-offers.offer-detail({id:offer.id})">{{offer.id}}</a></td>
+                    <td>{{offer.name}}</td>
+                    <td>{{offer.description}}</td>
+                    <td>{{offer.isSellable}}</td>
+                    <td>{{offer.lifecycleStatus}}</td>
+                    <td>{{offer.validFor_startDateTime}}</td>
+                    <td>{{offer.validFor_endDateTime}}</td>
+                    <td>{{offer.category}}</td>
+                    <td>{{offer.created_by}}</td>
+					<td>{{offer.created_date | date:'mediumDate'}}</td>
+                    <td>{{offer.type}}</td>
+                    <td>{{offer.template}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="list-offers.offer-detail({id:offer.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="offer.edit({id:offer.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="offer.delete({id:offer.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

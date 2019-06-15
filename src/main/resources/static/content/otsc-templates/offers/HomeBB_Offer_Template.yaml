@@ -1,0 +1,97 @@
+template_name: Home Broadband Offer
+template_type: Home_Broadband
+template_description: |
+    Offer Template for Home Broadband Plans
+    Create Offer with following parameters
+    ✓ Speed (in Mbps)
+    ✓ Data Allocation (in GB)
+    ✓ Throttle speed (in Mbps)
+    ✓ Free HOOQ membership with unlimited access (included by default)
+config_needed:
+  - Product_Catalog
+  - Service_Catalog
+  - Resource_Catalog
+eligible_base_offer_types:
+  - &P1 Home_Broadband_Product
+eligible_addon_offer_types:
+  - &P2 HOOQ
+product_types:
+  - base_product_types: [*P1]
+  - addon_product_types: [*P2]
+step1_parameters:
+  - name: General
+    params:
+      -
+        param_name: offer_name
+        param_desc: Offer Name
+        param_type: string
+step2_parameters:
+  -
+    name: basic_pricing_parameters
+    description: Basic Pricing Parameters
+    params:
+      -
+        param_name: plan_name
+        param_desc: Plan Name
+        param_type: string
+      -
+        param_name: bundled_products
+        param_desc: Bundled Products
+        param_type: array
+        param_enum_multi: [*P1]
+        param_onChange: bundleSelected(modelValue, form)
+        required: true
+      -
+        param_name: recurring_period
+        param_desc: Recurring Period - hour, day, week or month
+        param_type: string
+        param_enum: [hour,day,week,month]
+      -
+        param_name: price
+        param_desc: Price (in Pesos)
+        param_type: number
+      -
+        param_name: pricing_text
+        param_desc: details of pricing which customers would see on the marketplace
+        param_type: string
+step3_parameters:
+  -
+    name: Addon Pricing Parameters
+    params:
+      -
+        param_name: addon_product_types
+        param_desc: Addon Products
+        param_type: array
+        param_enum_multi: [*P2]
+        refresh: true
+      -
+        param_name: recurring_period
+        param_desc: one of hour, day, week or month
+        param_type: string
+        param_enum: [hour,day,week,month]
+      -
+        param_name: price
+        param_desc: Price (in Pesos)
+        param_type: number
+      -
+        param_name: pricing_text
+        param_desc: details of pricing which customers would see on the marketplace
+        param_type: string
+offer_parameters:
+  - name: *P1
+    params:
+      -
+        param_name: param_QoS_provide
+        param_desc: Provide QoS Resource Parameters
+      -
+        param_name: Max_Upload_BW
+        param_desc: Maximum Upload Bandwidth (in Mbps)
+        param_type: number
+      -
+        param_name: Max_Download_BW
+        param_desc: Maximum Download Bandwidth (in Mbps)
+        param_type: number
+      -
+        param_name: Throttle_Limit
+        param_desc: Threshold (in Mbps) after which speed is throttled
+        param_type: number
