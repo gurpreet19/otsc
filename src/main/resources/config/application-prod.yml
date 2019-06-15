@@ -21,8 +21,10 @@ spring:
             enabled: false
     data:
         mongodb:
-            uri: mongodb://CloudFoundry_4lu8afsf_6ctgt8de_apn5fbaf:wVaLWQI4s_vXwL5qD2C48WwuXbjO82cR@ds363996.mlab.com:63996
-            database: CloudFoundry_4lu8afsf_6ctgt8de
+            uri: mongodb://ds143262.mlab.com:43262
+            database: otsc
+            username: amdin
+            password: admin123
     mail:
         host: localhost
         port: 25
