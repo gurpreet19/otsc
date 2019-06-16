@@ -66,7 +66,7 @@ public class CloudDatabaseConfiguration extends AbstractCloudConfig {
         }
         MongoServiceInfo info = (MongoServiceInfo) matchingServiceInfos.get(0);
         Mongobee mongobee = new Mongobee(info.getUri());
-        mongobee.setDbName(mongoDbFactory.getDb().getName());
+        mongobee.setDbName("otsc");
         mongobee.setMongoTemplate(mongoTemplate);
         // package to scan for migrations
         mongobee.setChangeLogsScanPackage("com.infy.catalyst.otsc.config.dbmigrations");
