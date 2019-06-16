@@ -26,8 +26,8 @@ spring:
     jackson:
         serialization.indent_output: true
     data:
-        mongodb:
-            uri:mongodb://admin:admin123@ds143262.mlab.com:43262/otsc
+      mongodb:
+        uri: uri:mongodb://admin:admin123@ds143262.mlab.com:43262/otsc
     mail:
         host: localhost
         port: 25
